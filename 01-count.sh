@@ -12,10 +12,10 @@ then
 USAGE
 fi
 
-while IFS= read -r line
+while IFS= read -r file
 do 
 
-echo $line
+awk '{print}' $file |tr '[:upper:]' '[:lower:]'|wc -l
 
 
 done <<< $FILE
