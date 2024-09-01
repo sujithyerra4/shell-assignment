@@ -17,9 +17,9 @@ fi
 
 for i in $file
 do
-echo $file
+echo $file \n
 
-cat $file
+
 sed -i 's/they/the/g' $i
 
 done
