@@ -12,11 +12,7 @@ then
 USAGE
 fi
  file=$(find $FILE -name "*.txt")
-while IFS='' read -r fil
-do
 
-awk '{print}'  $fil
+awk '{print}'  $file
 
 # echo ${fil//the/tehy}
-
-done <<< $FILE
