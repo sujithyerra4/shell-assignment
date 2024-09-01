@@ -13,7 +13,7 @@ N="\e[0m"
 
 USAGE(){
 
-    echo " $R USAGE $N: sudo sh $0 <soure-dir> <des-dir>"
+    echo -e " $R USAGE $N: sudo sh $0 <soure-dir> <des-dir>"
 
 }
 
