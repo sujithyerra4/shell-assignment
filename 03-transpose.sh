@@ -22,17 +22,20 @@ awk '
         arr[i, NR] = $i
     }
     max_rows = (NR > max_rows) ? NR : max_rows
+
+    #condition? true:false
+    #max_rows wil finallly have total rows
 }
-echo $i
-# END {
-#     for (i = 1; i <= NF; i++) {
-#         for (j = 1; j <= max_rows; j++) {
-#             printf "%s", arr[i, j]
-#             if (j < max_rows) printf OFS
-#         }
-#         printf "\n"
-#     }
-# }
+
+END {
+    for (i = 1; i <= NF; i++) {
+        for (j = 1; j <= max_rows; j++) {
+            printf "%s", arr[i, j]
+            if (j < max_rows) printf OFS
+        }
+        printf "\n"
+    }
+}
 ' "$FILE"
 
 else 
