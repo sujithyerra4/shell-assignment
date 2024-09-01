@@ -2,7 +2,7 @@
 
 FILE=$1
 
-
+set -x
 USAGE(){
     echo "USAGE: sudo sh $0 <filename>"
     exit 1
