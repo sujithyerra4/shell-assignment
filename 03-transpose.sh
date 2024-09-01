@@ -14,7 +14,25 @@ fi
 if [ -f "$FILE" ]
  then
  
-awk '{print}' "$FILE" | tr ' ' '\n' | column
+# awk '{print}' "$FILE" | tr ' ' '\n' | column
+
+awk '
+{
+    for (i = 1; i <= NF; i++) {
+        arr[i, NR] = $i
+    }
+    max_rows = (NR > max_rows) ? NR : max_rows
+}
+END {
+    for (i = 1; i <= NF; i++) {
+        for (j = 1; j <= max_rows; j++) {
+            printf "%s", arr[i, j]
+            if (j < max_rows) printf OFS
+        }
+        printf "\n"
+    }
+}
+' "$FILE"
 
 else 
     echo "File $FILE does not exist."
