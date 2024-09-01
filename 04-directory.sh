@@ -47,7 +47,7 @@ then
 
  ZIP_FILE=$DES_DIR/source-$TIMESTAMP.txt
 
- find $SOURCE_DIR -name "*.txt" -mtime +"$DAYS"| zip $ZIP_FILE -@
+ find $SOURCE_DIR -name "*.txt" -mtime +"$DAYS"|zip $ZIP_FILE -@
 
  if [ -f $ZIP_FILE ]
  then
