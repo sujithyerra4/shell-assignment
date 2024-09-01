@@ -18,7 +18,7 @@ fi
 for $FILE in "*.txt"
 do
 
-sed -i 's/the/they/g' "$FILE"
+sed -i 's/the/they/g' 
 
 done
 
