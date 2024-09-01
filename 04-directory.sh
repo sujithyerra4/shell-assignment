@@ -1,19 +1,14 @@
 #!/bin/bash
 
-SOUREC_DIR=$1
-DES_DIR=$2
+SOURCE_DIR=$1
+DESTINATION_DIR=$2
 DAYS=${3:-14}
-TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-
-R="\e[31m"
-G="\e[32m"
-Y="\e[33m"
-N="\e[0m"
+TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
 
 USAGE(){
 
-    echo -e " $R USAGE $N: sudo sh $0 <soure-dir> <des-dir>"
+echo -e  "$R USAGE $N: sudo sh $0 <source> <destination> <days(optional)>"
 
 }
 
@@ -22,38 +17,30 @@ then
 USAGE
 exit 1
 fi
-#touch `date +%Y%m%d_%H%M%S` file2.txt
 
-if [ -d $SOURCE_DIR ]
-then
-echo -e "Directory $G exists $N"
-else
-echo -e "Directory not  $R exists $N"
-fi
+if [ ! -d $SOURCE_DIR ]
+ then
+   echo  $SOURCE_DIR doesnt exists
+ fi
 
-if [ -d $SDES_DIR ]
+if [ ! -d $DESTINATION_DIR ]
 then
-echo -e "Directory $G exists $N"
-else
-echo -e "Directory not  $R exists $N"
+ echo $DESTINATION_DIR doesnt exists
 fi
 
 FILES=$(find $SOURCE_DIR -name "*.txt" -mtime +"$DAYS")
+echo Files:$FILES
 
-echo Files="$FILES"
+if [ ! -z "$FILES" ]  
+    then
+    echo files are found
+    ZIP_FILE=$DESTINATION_DIR/app-logs-$TIME_STAMP.zip
+    find $SOURCE_DIR -name "*.txt" -mtime +"$DAYS"| zip $ZIP_FILE -@
 
+        if [ -f $ZIP_FILE ]
+        then 
 
-if [ ! -z "$FILES" ]
-then
-echo files are found
- ZIP_FILE=$DES_DIR/source-$TIMESTAMP.zip
-
- find $SOURCE_DIR -name "*.txt" -mtime +"$DAYS"|zip $ZIP_FILE -@
-
- if [ -f $ZIP_FILE ]
- then
-
- echo succesfully zipped files older than $DAYS
+        echo succesfully zipped files older than $DAYS
         while IFS= read -r file
         do
         echo "Deleting file:$file"
@@ -67,3 +54,8 @@ echo files are found
 else
   echo files are not found
 fi
+
+
+
+#true only if files are epmty if files are not empty it gives false , then reslut will go to else
+#instead of this we can also use  -n or -f
