@@ -51,7 +51,7 @@ then
 
  if [ -f $ZIP_FILE ]
  then
-
+echo files are found
  echo succesfully zipped files older than $DAYS
         while IFS= read -r file
         do
