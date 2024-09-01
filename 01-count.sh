@@ -4,7 +4,7 @@ FILE=$1
 
 
 USAGE(){
-    echo "USAGE: sudo sh $0 $FILE"
+    echo "USAGE: sudo sh $0 <filename>"
     exit 1
 }
 if [ $# -eq 0 ]
