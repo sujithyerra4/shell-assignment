@@ -2,7 +2,7 @@
 
 FILE=$1
 
-set -x
+
 USAGE(){
     echo "USAGE: sudo sh $0 <filename>"
     exit 1
@@ -15,9 +15,8 @@ fi
 while IFS= read -r file
 do 
 
-echo $file|tr '[:upper:]' '[:lower:]'|wc -l
+echo $file
 
 
 done <<< $FILE
 
-set +x
