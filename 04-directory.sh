@@ -86,10 +86,10 @@ if [ ! -d "$DESTINATION_DIR" ]; then
     echo "Destination directory $DESTINATION_DIR does not exist."
     exit 1
 fi
-
-if[ -f $SOURCE_DIR ]
+FILES=$(find $SOURCE_DIR -name)
+if[ -f "$FILES" ]
 then
-
+echo $FILES
 sync=$(rsync -av --update "$SOURCE_DIR" "$DESTINATION_DIR")
 
 while IFS= read -r file
