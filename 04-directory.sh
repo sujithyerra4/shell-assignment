@@ -40,14 +40,14 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.txt" -mtime +"$DAYS")
 
-if [ -f $FILES ]
+if [ -f "$FILES" ]
 then
 
  ZIP_FILE=$DES_DIR/source-$TIMESTAMP.txt
 
  find $SOURCE_DIR -name "*.txt" -mtime +"$DAYS"| zip $ZIP_FILE -@
 
- if [ ! -f $ZIP_FILE ]
+ if [ -f "$ZIP_FILE" ]
  then
 
  echo succesfully zipped files older than $DAYS
