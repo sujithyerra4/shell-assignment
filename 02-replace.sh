@@ -13,13 +13,14 @@ USAGE
 fi
  file=$(find $FILE -name "*.txt")
 
-# awk '{print}'  $file|mv the they
+
 
 for i in $file
 do
 
-sed -i 's/they/the/g' $i
+sed -i.bak 's/the/they/g' $i
 
 done
 
-# echo ${fil//the/tehy}
+
+# sed - stream editor - It can perform various text operations, such as search and replace, insert, delete, and more.
