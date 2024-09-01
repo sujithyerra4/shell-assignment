@@ -14,11 +14,9 @@ fi
  file=$(find $FILE -name "*.txt" )
 
 # Check if no files were found
-if [ ! -z "$files" ]; then
-    echo "No .txt files found in the specified directory."
-    exit 1
-fi
-
+if [ ! -z "$files" ]
+then
+   
 for i in $file
 do
 echo $i 
@@ -27,6 +25,12 @@ echo $i
 sed -i 's/they/the/g' $i
 
 done
+
+else
+
+echo files are not found
+
+fi
 
 # .bak will create backuup before replacing
 # sed - stream editor - It can perform various text operations, such as search and replace, insert, delete, and more.
