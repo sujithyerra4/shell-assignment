@@ -15,7 +15,7 @@ fi
 while IFS= read -r file
 do 
 
-awk '{print}' $file |tr '[:upper:]' '[:lower:]'|wc -l
+awk '{print}' $file |tr '[:upper:]' '[:lower:]'
 
 
 done <<< $FILE
