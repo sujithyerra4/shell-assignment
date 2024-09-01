@@ -13,11 +13,15 @@ USAGE
 fi
  file=$(find $FILE -name "*.txt" )
 
-
+# Check if no files were found
+if [ -z "$files" ]; then
+    echo "No .txt files found in the specified directory."
+    exit 1
+fi
 
 for i in $file
 do
-echo \n$file 
+echo $i 
 
 
 sed -i 's/they/the/g' $i
