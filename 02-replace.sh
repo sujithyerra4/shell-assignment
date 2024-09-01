@@ -13,7 +13,7 @@ USAGE
 fi
  file=$(find $FILE -name "*.txt")
 
-awk '{print}'  $file|mv the they
+# awk '{print}'  $file|mv the they
 
 for i in $file
 do
