@@ -15,9 +15,7 @@ fi
 while IFS= read -r line
 do 
 
-# echo $line
-awk '{print}' $line
-
+echo $line
 
 
 done <<< $FILE
