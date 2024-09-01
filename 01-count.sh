@@ -18,7 +18,7 @@ do
 # awk '{print}' $file |tr '[:upper:]' '[:lower:]'|wc -m
 
 # Remove special characters, convert to lowercase, replace spaces with newlines, and count words
-tr -c '[:alnum:]' '[\n*]' < awk '{print}' $file | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr
+ awk '{print}' $file | tr -c '[:alnum:]' '[\n*]' |tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr
 
 
 
