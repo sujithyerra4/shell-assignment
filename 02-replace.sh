@@ -18,7 +18,7 @@ fi
 for i in $file
 do
 
-vim -i 's/they/the/g' $i
+sed -i 's/they/the/g' $i
 
 done
 
