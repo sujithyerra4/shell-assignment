@@ -18,6 +18,8 @@ fi
 for i in $file
 do
 echo $file
+
+cat $file
 sed -i 's/they/the/g' $i
 
 done
