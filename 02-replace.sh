@@ -14,16 +14,14 @@ fi
  file=$(find $FILE -name "*.txt" )
 
 # Check if no files were found
-if [ -n "$files" ]
+if [ -n "$file" ]
 then
    
 for i in $file
 do
 echo $i 
 
-
 sed -i 's/they/the/g' $i
-
 done
 
 else
