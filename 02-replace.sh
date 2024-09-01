@@ -11,11 +11,11 @@ if [ $# -eq 0 ]
 then
 USAGE
 fi
- file=$(find $FILE -name "*.txt")
+#  file=$(find $FILE -name "*.txt")
 while IFS='' read -r fil
 do
 
-awk '{print}'  $file
+awk '{print}'  $fil
 
 # echo ${fil//the/tehy}
 
