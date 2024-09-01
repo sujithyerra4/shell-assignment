@@ -18,7 +18,7 @@ fi
 for i in $file
 do
 
-sed -i 's/the/they/g' 
+sed -i 's/the/they/g' $file
 
 done
 
