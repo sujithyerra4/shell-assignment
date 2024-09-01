@@ -38,14 +38,14 @@ else
 echo -e "Directory not  $R exists $N"
 fi
 
-FILES=$(find $SOURCE_DIR -name "*.txt" -mtime +$DAYS)
+FILES=$(find $SOURCE_DIR -name "*.txt" -mtime $DAYS)
 
 if [ -f $FILES ]
 then
 
  ZIP_FILE=$DES_DIR/updated-$TIMESTAMP.txt
 
- find $SOURCE_DIR -name "*.txt" -mtime ?|zip $ZIP_FILE -@
+ find $SOURCE_DIR -name "*.txt" -mtime $DAYS |zip $ZIP_FILE -@
 
  if [ -f $ZIP_FILE ]
  then
