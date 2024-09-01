@@ -14,7 +14,7 @@ fi
 
 
 # Remove special characters, convert to lowercase, replace spaces with newlines, and count words
- awk '{print}' $FILE | tr -c '[:alnum:]' '[\n*]' |tr -s '\n'|tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -rn|head -n 5 
+ awk '{print}' $FILE | tr -c '[:alnum:]'  |tr -s '\n'|tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -rn|head -n 5 
 
 
 
