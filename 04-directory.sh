@@ -87,9 +87,9 @@ if [ ! -d "$DESTINATION_DIR" ]; then
     exit 1
 fi
 
-if[ -f $$SOURCE_DIR ]
+if[ -f $SOURCE_DIR ]
 then
-# Perform synchronization using rsync
+
 sync=$(rsync -av --update "$SOURCE_DIR" "$DESTINATION_DIR")
 
 while IFS= read -r file
