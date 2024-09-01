@@ -2,7 +2,7 @@
 
 SOUREC_DIR=$1
 DES_DIR=$2
-DAYS=${3:14}
+DAYS=${3:-14}
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
 R="\e[31m"
@@ -38,14 +38,14 @@ else
 echo -e "Directory not  $R exists $N"
 fi
 
-FILES=$(find $SOURCE_DIR -name "*.txt" -mtime +3)
+FILES=$(find $SOURCE_DIR -name "*.txt" -mtime +"$DAYS")
 
 if [ -f $FILES ]
 then
 
- ZIP_FILE=$DES_DIR/updated-$TIMESTAMP.txt
+ ZIP_FILE=$DES_DIR/source-$TIMESTAMP.txt
 
- find $SOURCE_DIR -name "*.txt" -mtime +3 | zip $ZIP_FILE -@
+ find $SOURCE_DIR -name "*.txt" -mtime +"$DAYS"| zip $ZIP_FILE -@
 
  if [ ! -f $ZIP_FILE ]
  then
