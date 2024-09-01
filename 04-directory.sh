@@ -39,6 +39,8 @@ echo -e "Directory not  $R exists $N"
 fi
 
 FILES=$(find $SOURCE_DIR -name "*.txt" -mtime +"$DAYS")
+echo "$FILES"
+
 
 if [ ! -z "$FILES" ]
 then
