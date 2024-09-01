@@ -87,7 +87,7 @@ if [ ! -d "$DESTINATION_DIR" ]; then
     exit 1
 fi
 
-sync=$(rsync -av --update "$SOURCE_DIR" "$DESTINATION_DIR")
+sync=$(rsync -av --update "$SOURCE_DIR/" "$DESTINATION_DIR/")
 
 
 
