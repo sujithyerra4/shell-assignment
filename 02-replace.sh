@@ -14,7 +14,7 @@ fi
  file=$(find $FILE -name "*.txt" )
 
 # Check if no files were found
-if [ ! -z "$files" ]
+if [ -f "$files" ]
 then
    
 for i in $file
