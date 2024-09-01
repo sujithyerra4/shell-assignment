@@ -11,13 +11,13 @@ if [ $# -eq 0 ]
 then
 USAGE
 fi
- file=$(find $FILE -name "*.txt" \n)
+ file=$(find $FILE -name "*.txt" )
 
 
 
 for i in $file
 do
-echo $file 
+echo \n$file 
 
 
 sed -i 's/they/the/g' $i
