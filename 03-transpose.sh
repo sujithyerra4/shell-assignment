@@ -23,17 +23,18 @@ awk '
     }
     max_rows = (NR > max_rows) ? NR : max_rows
 }
-END {
-    for (i = 1; i <= NF; i++) {
-        for (j = 1; j <= max_rows; j++) {
-            printf "%s", arr[i, j]
-            if (j < max_rows) printf OFS
-        }
-        printf "\n"
-    }
-}
-' "$FILE"
 
+# END {
+#     for (i = 1; i <= NF; i++) {
+#         for (j = 1; j <= max_rows; j++) {
+#             printf "%s", arr[i, j]
+#             if (j < max_rows) printf OFS
+#         }
+#         printf "\n"
+#     }
+# }
+' "$FILE"
+echo $i
 else 
     echo "File $FILE does not exist."
     exit 1
