@@ -88,7 +88,15 @@ if [ ! -d "$DESTINATION_DIR" ]; then
 fi
 
 # Perform synchronization using rsync
-rsync -av --update "$SOURCE_DIR/" "$DESTINATION_DIR/"
+sync=$(rsync -av --update "$SOURCE_DIR" "$DESTINATION_DIR")
+
+while IFS= read -r file
+do
+ echo "Deleting file:$file"
+ rm -rf $FILES
+
+done <<< $sync
+
 
 # Check if rsync command was successful
 if [ $? -eq 0 ]; then
