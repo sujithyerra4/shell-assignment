@@ -18,9 +18,9 @@ fi
 for i in $file
 do
 
-sed -i.bak 's/the/they/g' $i
+sed -i 's/they/the/g' $i
 
 done
 
-
+# .bak will create backuup before replacing
 # sed - stream editor - It can perform various text operations, such as search and replace, insert, delete, and more.
