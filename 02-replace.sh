@@ -15,8 +15,8 @@ fi
 while IFS='' read -r fil
 do
 
-# awk '{print}'  $file|
+ awk '{print}'  $fil|echo ${fil//the/tehy}
 
-echo ${fil//the/tehy}
+
 
 done <<< $FILE
