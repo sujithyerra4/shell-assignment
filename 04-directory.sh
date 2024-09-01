@@ -87,6 +87,8 @@ if [ ! -d "$DESTINATION_DIR" ]; then
     exit 1
 fi
 
+if[ -f $$SOURCE_DIR ]
+then
 # Perform synchronization using rsync
 sync=$(rsync -av --update "$SOURCE_DIR" "$DESTINATION_DIR")
 
@@ -105,3 +107,7 @@ else
     echo "Error during synchronization."
     exit 1
 fi
+else
+ no files
+ exit 1
+ fi
