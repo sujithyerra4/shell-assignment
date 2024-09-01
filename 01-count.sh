@@ -12,10 +12,10 @@ then
 USAGE
 fi
 
-while IFS= read -r file
+while IFS= read -r line
 do 
 
-echo $file
+echo $line
 
 
 done <<< $FILE
