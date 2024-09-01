@@ -11,8 +11,15 @@ if [ $# -eq 0 ]
 then
 USAGE
 fi
- file=$(find $FILE -name "*.txt")
+#  file=$(find $FILE -name "*.txt")
 
-awk '{print}'  $file
+# awk '{print}'  $file|mv the they
+
+for $FILE in "*.txt"
+do
+
+sed -i 's/the/they/g' "$FILE"
+
+done
 
 # echo ${fil//the/tehy}
