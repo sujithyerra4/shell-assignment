@@ -19,3 +19,5 @@ echo $file|tr '[:upper:]' '[:lower:]'|wc -l
 
 
 done <<< $FILE
+
+set +x
