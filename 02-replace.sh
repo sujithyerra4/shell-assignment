@@ -15,7 +15,7 @@ fi
 
 # awk '{print}'  $file|mv the they
 
-for $FILE in "*.txt"
+for $FILE in "*.txt";
 do
 
 sed -i 's/the/they/g' 
