@@ -39,19 +39,20 @@ echo -e "Directory not  $R exists $N"
 fi
 
 FILES=$(find $SOURCE_DIR -name "*.txt" -mtime +"$DAYS")
-echo "$FILES"
+
+echo Files="$FILES"
 
 
 if [ ! -z "$FILES" ]
 then
-
+echo files are found
  ZIP_FILE=$DES_DIR/source-$TIMESTAMP.zip
 
  find $SOURCE_DIR -name "*.txt" -mtime +"$DAYS"|zip $ZIP_FILE -@
 
  if [ -f $ZIP_FILE ]
  then
-echo files are found
+
  echo succesfully zipped files older than $DAYS
         while IFS= read -r file
         do
