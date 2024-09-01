@@ -45,7 +45,7 @@ echo "$FILES"
 if [ ! -z "$FILES" ]
 then
 
- ZIP_FILE=$DES_DIR/source-$TIMESTAMP.txt
+ ZIP_FILE=$DES_DIR/source-$TIMESTAMP.zip
 
  find $SOURCE_DIR -name "*.txt" -mtime +"$DAYS"|zip $ZIP_FILE -@
 
