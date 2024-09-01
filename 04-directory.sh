@@ -45,9 +45,9 @@ then
 
  ZIP_FILE=$DES_DIR/updated-$TIMESTAMP.txt
 
- find $SOURCE_DIR -name "*.txt" -mtime +3 |zip $ZIP_FILE -@
+ find $SOURCE_DIR -name "*.txt" -mtime +3 | zip $ZIP_FILE -@
 
- if [ -f $ZIP_FILE ]
+ if [ ! -f $ZIP_FILE ]
  then
 
  echo succesfully zipped files older than $DAYS
