@@ -11,9 +11,12 @@ if [ $# -eq 0 ]; then
     USAGE
 fi
 
-if [ ! -f "$FILE" ]; then
+if [ -f "$FILE" ]
+ then
+ 
+awk '{print}' "$FILE" | tr ' ' '\n' | column
+
+else 
     echo "File $FILE does not exist."
     exit 1
 fi
-
-awk '{print}' "$FILE" | tr ' ' '\n' | column
