@@ -23,7 +23,7 @@ awk '
     }
     max_rows = (NR > max_rows) ? NR : max_rows
 }
-
+echo $i
 # END {
 #     for (i = 1; i <= NF; i++) {
 #         for (j = 1; j <= max_rows; j++) {
@@ -34,7 +34,7 @@ awk '
 #     }
 # }
 ' "$FILE"
-echo $i
+
 else 
     echo "File $FILE does not exist."
     exit 1
